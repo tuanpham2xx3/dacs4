@@ -2,9 +2,12 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 import taildwindcss from 'tailwindcss'
+
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "/deploy_react_app_github_pages_vercel/",
   server: {
     port: 3000
   },

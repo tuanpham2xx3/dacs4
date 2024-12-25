@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, Copy, Check, Download } from 'lucide-react'
+import { ArrowLeft, Copy, Check } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast"
 import { QRCodeSVG } from "qrcode.react"
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
 
 interface ShareCodeProps {
   code: string
@@ -55,21 +55,13 @@ export function ShareCode({ code, onBack }: ShareCodeProps) {
     }
   }
 
-  const handleBack = () => {
-    toast({
-      title: "Quay lại",
-      description: "Bạn có thể tải lên file mới",
-    })
-    onBack()
-  }
-
   return (
     <Card className="w-full border-rose-100 bg-gradient-to-b from-white to-rose-50/50">
       <CardHeader className="flex flex-row items-center">
         <Button
           variant="ghost"
           size="icon"
-          onClick={handleBack}
+          onClick={onBack}
           className="mr-2"
           aria-label="Quay lại"
         >

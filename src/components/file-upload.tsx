@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useToast } from "@/hooks/use-toast"
 import { ShareCode } from "./share-code"
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+const API_URL = import.meta.env.VITE_API_URL || 'https://dacs4-server.onrender.com/'
 
 interface FileInfo {
   name: string
@@ -19,8 +19,6 @@ export function FileUpload() {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const { toast } = useToast()
   
-  const totalSize = files.reduce((acc, file) => acc + file.size, 0)
-
   const handleFileChange = async (fileList: FileList | null) => {
     if (!fileList || fileList.length === 0) return
     

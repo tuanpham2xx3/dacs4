@@ -1,9 +1,9 @@
-import { SiteHeader } from "@/components/site-header"
 import { FileUpload } from "@/components/file-upload"
 import { ReceiveSection } from "@/components/receive-section"
+import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Toaster } from "@/components/ui/toaster"
-import { BrowserRouter as Router, Route, Routes, useParams, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useParams, Navigate } from "react-router-dom"
 
 // Component để xử lý redirect từ QR code
 function ReceiveRedirect() {
@@ -13,7 +13,7 @@ function ReceiveRedirect() {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen flex flex-col bg-gradient-to-b from-rose-50/30 to-white">
         <SiteHeader />
         <main className="flex-1 container py-12 flex items-center">
@@ -31,5 +31,5 @@ export default function App() {
         <Toaster />
       </div>
     </Router>
-  );
+  )
 }

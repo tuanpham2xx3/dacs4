@@ -6,9 +6,10 @@ import { ShareCode } from "./share-code"
 
 export function SendOptions() {
   const [showShareCode, setShowShareCode] = useState(false)
+  const [shareCode] = useState<string | null>(null)
 
-  if (showShareCode) {
-    return <ShareCode onBack={() => setShowShareCode(false)} />
+  if (showShareCode && shareCode) {
+    return <ShareCode code={shareCode} onBack={() => setShowShareCode(false)} />
   }
 
   return (
