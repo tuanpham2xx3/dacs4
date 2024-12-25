@@ -2,7 +2,14 @@ import { SiteHeader } from "@/components/site-header"
 import { FileUpload } from "@/components/file-upload"
 import { ReceiveSection } from "@/components/receive-section"
 import { SiteFooter } from "@/components/site-footer"
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Toaster } from "@/components/ui/toaster"
+import { BrowserRouter as Router, Route, Routes, useParams, Navigate } from "react-router-dom";
+
+// Component để xử lý redirect từ QR code
+function ReceiveRedirect() {
+  const { code } = useParams()
+  return <Navigate to={`/?code=${code}`} replace />
+}
 
 export default function App() {
   return (
@@ -17,9 +24,11 @@ export default function App() {
                 <ReceiveSection />
               </div>
             } />
+            <Route path="/receive/:code" element={<ReceiveRedirect />} />
           </Routes>
         </main>
         <SiteFooter />
+        <Toaster />
       </div>
     </Router>
   );
