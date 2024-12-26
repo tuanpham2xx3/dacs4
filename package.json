@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check \"src/**/(*.tsx|*.ts|*.css|*.scss)\"",
-    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.css|*.scss)\""
+    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.css|*.scss)\"",
+    "deploy": "vercel deploy --prod"
   },
   "dependencies": {
     "@vitejs/plugin-react-swc": "^3.7.2",
