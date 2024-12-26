@@ -2,10 +2,8 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/"
     }
-  ],
-  "env": {
-    "VITE_API_URL": "https://dacs4-phamtuan2xx3-gmailcoms-projects.vercel.app/"
-  }
+  ]
+ 
 }
